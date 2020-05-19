@@ -41,5 +41,5 @@
    Он будет работать на порту 8000 по умолчанию.<br>
   `>>> python manage.py runserver` 
  
-5) ### Ссылка на сайт [Prizma312](https://adikgklx.beget.tech/)
+5) ### Ссылка на сайт [Prizma312](http://adikgklx.beget.tech/)
   
