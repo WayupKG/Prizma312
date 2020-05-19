@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="content">
+        <div class="single-page-decor"></div>
+            <div class="single-page-fixed-row">
+                <div class="scroll-down-wrap">
+                    <div class="mousey">
+                        <div class="scroller"></div>
+                    </div>
+                    <span>Scroll Down</span>
+                </div>
+                <a href="index.html" class="single-page-fixed-row-link"><i class="fal fa-arrow-left"></i> <span>Back to home</span></a>
+            </div>
+        <section class="dark-bg sinsec-dec sinsec-dec2" style="padding-bottom: 95px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="video-promo-text fl-wrap mar-top">
+                            <h3>Внимание!
+                                <br>
+                                Вы вышли из аккаунта</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                                At commodi, consequuntur doloremque excepturi facere harum incidunt ipsa ipsum,<br>
+                                molestias nostrum porro possimus quo repudiandae similique.</p>
+                            <a href="{% url 'login'%}" class="btn float-btn flat-btn color-btn mar-top">Нажмите здесь, чтобы войти снова.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="half-bg-dec single-half-bg-dec" data-ran="12"></div>
+            <div class="sec-lines"></div>
+        </section>
+    </div>
+</div>
+{% endblock %}

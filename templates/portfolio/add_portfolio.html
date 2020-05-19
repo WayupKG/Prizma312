@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div class="content">
+        <div class="single-page-decor"></div>
+            <div class="single-page-fixed-row">
+                <div class="scroll-down-wrap">
+                    <div class="mousey">
+                        <div class="scroller"></div>
+                    </div>
+                    <span>Scroll Down</span>
+                </div>
+                <a href="index.html" class="single-page-fixed-row-link"><i class="fal fa-arrow-left"></i> <span>Back to home</span></a>
+            </div>
+                    <!-- section-->
+        <section class="dark-bg sinsec-dec sinsec-dec2" style="height: 100% !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="video-promo-text fl-wrap mar-top">
+                            <h3>Добавить портфолио</h3>
+                            <form  enctype="multipart/form-data" action method="POST" novalidate class="custom-form" style="z-index: 99">
+                                {% csrf_token %}
+                                <div class="p_p">
+                                    <p>
+                                        {{ form.title.label_tag }}
+                                        {{ form.title }}
+                                    </p>
+                                    <p>
+                                        {{ form.body.label_tag }}
+                                        {{ form.body | safe }}
+                                        {{ form.media }}
+                                    </p>
+                                    <p>
+                                        {{ form.category.label_tag }}
+                                        {{ form.category }}
+                                    </p>
+                                        <div class="col-md-6">
+                                            <p>
+                                                {{ form.img.label_tag }}
+                                                {{ form.img }}
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>
+                                                {{ form.zip_file.errors }}
+                                                {{ form.zip_file.label_tag }}
+                                                {{ form.zip_file }}
+                                            </p>
+                                        </div>
+                                    <p>
+                                        {{ form.tags.errors }}
+                                        {{ form.tags.label_tag }}
+                                        {{ form.tags }}
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                                <button type="submit" value="Save" class="btn float-btn flat-btn color-btn">Добавить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <div class="half-bg-dec single-half-bg-dec" data-ran="12"></div>
+            <div class="sec-lines"></div>
+        </div>
+        </section>
+    </div>
+</div>
+    <style type="text/css" hidden>
+        .p_p p {
+            font-size: 16px;
+        }
+        .p_p p #id_title, #id_tags {
+            padding-left: 15px;
+        }
+
+    </style>
+{% endblock %}

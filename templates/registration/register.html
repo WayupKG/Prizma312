@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div class="content">
+    <div class="single-page-decor"></div>
+        <div class="single-page-fixed-row">
+            <div class="scroll-down-wrap">
+                <div class="mousey">
+                    <div class="scroller"></div>
+                </div>
+                <span>Scroll Down</span>
+            </div>
+            <a href="index.html" class="single-page-fixed-row-link"><i class="fal fa-arrow-left"></i> <span>Back to home</span></a>
+        </div>
+        <section class="dark-bg sinsec-dec sinsec-dec2" style="height: 100% !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="video-promo-text fl-wrap mar-top">
+                            <h3>Регистрация</h3>
+                            <form method="POST" class="custom-form" style="width: 100%; text-align: center">{% csrf_token %}
+                                <table style="width: 80%">
+                                    {% if username_error or email_error or password_error  %}
+                                        <tr>
+                                            <td>
+                                                <p style="color: red">{{ username_error }}</p>
+                                                <p style="color: red">{{ email_error }}</p>
+                                                <p style="color: red">{{ password_error }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                    <tr>
+                                        <td>
+                                            <label><i class="fal fa-user"></i></label>
+                                            <input type="text" name="first_name" class="fist_name" placeholder="Имя" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><i class="fal fa-user"></i></label>
+                                            <input type="text" name="last_name" class="last_name" placeholder="Фамилия" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><i class="fal fa-user"></i></label>
+                                            <input type="text" pattern="^[a-zA-Z]+$" name="username"
+                                                   class="username" placeholder="Логин" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><i class="fal fa-mail-bulk"></i></label>
+                                            <input type="email" name="email" class="Email" placeholder="Email" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <label><i class="fal fa-lock"></i></label>
+                                            <input type="password" name="password" class="password" placeholder="Пароль" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><i class="fal fa-lock"></i></label>
+                                            <input type="password" name="password2" class="password" placeholder="Подвердить" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="checkbox" style="color: #fff; font-size: 17px">Принимаю условию сайта
+                                                <input type="checkbox" name="checkbox" style="margin-left: 10px" required>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="submit" value="Регистрация"
+                                                    class="btn float-btn flat-btn color-btn">Регистрация</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+
+
+                        </div>
+                    </div>
+                <div class="col-md-6">
+                        <div class="video-promo-text fl-wrap mar-top">
+                            <h3>Условия сайта</h3>
+                            <ul style="font-size: 18px; text-align: left; color: #fff">
+                                <li>1) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, non?</li>
+                                <li>2) Lorem ipsum dolor sit amet.</li>
+                                <li>3) Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                            </ul>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div class="half-bg-dec single-half-bg-dec" data-ran="12"></div>
+            <div class="sec-lines"></div>
+        </section>
+    </div>
+</div>
+{% endblock %}

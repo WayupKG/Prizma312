@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+            <!--wrapper-->
+            <div id="wrapper" class="single-page-wrap" style="overflow: hidden">
+                <!-- Content-->
+                <div class="content">
+                    <div class="single-page-decor"></div>
+                    <div class="single-page-fixed-row">
+                        <div class="scroll-down-wrap">
+                            <div class="mousey">
+                                <div class="scroller"></div>
+                            </div>
+                            <span>Scroll Down</span>
+                        </div>
+                        <a href="index.html" class="single-page-fixed-row-link"><i class="fal fa-arrow-left"></i> <span>Back to home</span></a>
+                    </div>
+                    <!-- section-->
+                    <section class="parallax-section dark-bg sec-half parallax-sec-half-right" data-scrollax-parent="true">
+                        <div class="bg par-elem"  data-bg="{% static 'images/bg/1.jpg' %}" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="overlay">
+
+
+                        </div>
+                        <div class="pattern-bg"></div>
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="col-md-6">
+                                    <h2><span>Авторизация</span></h2>
+                                 <form method="post" action="{% url 'login' %}" class="custom-form">
+                                    {% csrf_token %}
+                                    <table style="width: 75%;">
+                                    <tr>
+                                      <td>
+                                          <span style="font-size: 18px; color: #fff !important;">{{ form.username.label_tag }}</span><br>
+                                          <label><i class="fal fa-user"></i></label>
+                                          {{ form.username }}
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td>
+
+                                          <span style="font-size: 18px">{{ form.password.label_tag }}</span><br>
+                                          <label><i class="fal fa-lock"></i></label>
+                                          {{ form.password }}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="submit" value="Войти"
+                                                    class="btn float-btn flat-btn color-btn" style="cursor: pointer">Войти</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #fff;" >
+                                            <p class="mar-top" style="font-size: 18px">
+                                                <a href="{% url 'register' %}" style="color: #fff;" >Регистрация</a> /
+                                                <a href="{% url 'password_reset' %}" style="color: #fff;">Забыль пароль?</a>
+                                            </p>
+
+                                        </td>
+                                    </tr>
+                                        <input type="hidden" name="next" value="{{ next }}" />
+                                    </table>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Content end -->
+{% endblock %}

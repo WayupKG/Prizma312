@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+            <!--wrapper-->
+            <div id="wrapper" class="single-page-wrap">
+                <!-- Content-->
+                <div class="content">
+                    <div class="single-page-decor"></div>
+                    <div class="fsp-filter">
+                        <div class="filter-title"><i class="fal fa-filter"></i><span>Portfolio Filter</span></div>
+                        <div class="gallery-filters">
+                            <a href="#" class="gallery-filter  gallery-filter-active" data-filter="*">All</a>
+                            <a href="#" class="gallery-filter" data-filter=".web">Web Design</a>
+                            <a href="#" class="gallery-filter" data-filter=".photography">Photo</a>
+                            <a href="#" class="gallery-filter" data-filter=".branding">Branding</a>
+                            <a href="#" class="gallery-filter" data-filter=".uides">Ui Design</a>
+                        </div>
+                        <div class="folio-counter">
+                            <div class="num-album"></div>
+                            <div class="all-album"></div>
+                        </div>
+                    </div>
+                    <section class="no-padding dark-bg">
+                        <!-- portfolio start -->
+                        <div class="gallery-items min-pad   four-column vis-box-det">
+
+                            <!-- gallery-item-->
+                            <div class="gallery-item web branding">
+                                <div class="grid-item-holder">
+                                    <a href="{% static 'images/folio/1.jpg' %}" class="fet_pr-carousel-box-media-zoom   image-popup"><i class="fal fa-search"></i></a>
+                                    <img  src="{% static 'images/folio/1.jpg' %}" alt="">
+                                    <div class="box-item hd-box">
+                                        <div class=" fl-wrap full-height">
+                                            <div class="hd-box-wrap">
+                                                <h2><a href="portfolio-single.html">Kent Brant Concept</a></h2>
+                                                <p><a href="#">Design  </a> <a href="#"> Branding</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- gallery-item end-->
+
+                        </div>
+                        <!-- portfolio end -->
+                    </section>
+                    <!-- section-->
+                    <section class="dark-bg2 small-padding order-wrap">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3>Ready To order Your Project ?</h3>
+                                </div>
+                                <div class="col-md-4"><a href="contscts.html" class="btn flat-btn color-btn">Get In Touch</a> </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end-->
+                </div>
+                <!-- Content end -->
+            </div>
+{% endblock %}
